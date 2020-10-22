@@ -1,32 +1,70 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <div>
+      <q-toolbar class="text-white shadow-2 toolbar">
+        <q-img
+          class="logo q-mt-sm q-mb-sm"
+          src="https://static.wixstatic.com/media/74c934_d8b1b749bd8e452288b7a311691e3f8f~mv2.png/v1/crop/x_0,y_16,w_429,h_507/fill/w_53,h_60,al_c,q_85,usm_0.66_1.00_0.01/logo%20mobile%20key-02.webp"
+          style="height: 60px; max-width: 53px"
+        />
+        <!-- <q-btn flat label="Homepage"  /> -->
+        <q-space />
+
+        <!--
+        notice shrink property since we are placing it
+        as child of QToolbar
+      -->
+        <q-tabs v-model="tab" shrink stretch class="tabbar">
+          <q-tab name="tab1" label="หน้าแรก" />
+          <q-tab name="tab2" label="ระบบ e-KYC" />
+          <q-tab name="tab3" label="ระบบ e-Signature" />
+          <q-tab name="tab4" label="เทคโนโลยีของ iSignSecure" />
+          <q-tab name="tab5" label="ติดต่อเรา" />
+        </q-tabs>
+      </q-toolbar>
     </div>
-    <router-view/>
+    <div>
+      <q-parallax class="window-height window-width" :speed="0.5">
+        <template v-slot:media>
+          <img
+            src="https://cdn.pixabay.com/photo/2014/09/23/15/03/background-457811_640.png"
+          />
+        </template>
+
+        <div class="full-height full-width">
+          <Home />
+        </div>
+      </q-parallax>
+    </div>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Home from "./views/Home";
+export default {
+  name: "LayoutDefault",
 
-#nav {
-  padding: 30px;
-}
+  components: {
+    Home,
+  },
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  data() {
+    return {
+      leftDrawerOpen: false,
+    };
+  },
+};
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style lang="css">
+.logo {
+  margin-left: 25%;
+  /* margin-right: 5%; */
+}
+.tabbar {
+  margin-right: 25%;
+}
+.toolbar {
+  background-color: #1d2951;
 }
 </style>
