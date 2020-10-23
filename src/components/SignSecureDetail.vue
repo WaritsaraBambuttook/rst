@@ -23,7 +23,7 @@ export default {
   props: {
     logo: { type: String, required: true },
     detail: { type: String, required: true },
-    content: { type: String, required: true },
+    content: { type: Array, required: true },
   },
 };
 </script>

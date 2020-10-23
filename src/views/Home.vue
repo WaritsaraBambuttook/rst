@@ -32,6 +32,15 @@
       <div class="col-12 q-mt-xl">
         <Photo :logo="photo" />
       </div>
+      <div class="col-12 q-ma-xl setPosition">
+        <Solution :title="solutionTitle" :detail="solutionDetail" />
+      </div>
+      <div class="col-12 ">
+        <SolutionList
+          :title="solutionListTitle"
+          :content="SolutionListContent"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -42,6 +51,9 @@ import company from "../components/CompanyReady";
 import SignSecure from "../components/SignSecure";
 import SignSecureDetail from "../components/SignSecureDetail";
 import Photo from "../components/Photo";
+import Solution from "../components/Solution";
+import SolutionList from "../components/SolutionList";
+
 export default {
   components: {
     HomeBanner,
@@ -49,6 +61,8 @@ export default {
     SignSecure,
     SignSecureDetail,
     Photo,
+    Solution,
+    SolutionList,
   },
   data() {
     return {
@@ -129,6 +143,36 @@ export default {
           url:
             "https://static.wixstatic.com/media/74c934_9030360934414db5ac914938282cf7ef~mv2.png/v1/fill/w_282,h_504,al_c,q_85,usm_0.66_1.00_0.01/3ss.webp",
           color: "#BCC6CC",
+        },
+      ],
+      //
+      solutionTitle: "RST เราเป็นหนึ่งเรื่องโซลูชันสำหรับองค์กร",
+      solutionDetail:
+        "ในนามของบริษัท เรียลไทม์ แอนด์ ซีเคียว เทคโนโลยี จำกัด เราพร้อมที่จะสร้างสรรค์นวัตกรรมใหม่ที่สามารถสอดผสานเข้ากับระบบสินค้าและบริการออนไลน์ของคุณได้ทันทีและสำหรับผลิตภัณฑ์อย่าง iSignSecure เราได้ทำการศึกษาแนวทางปฏิบัติ เงื่อนไขและขอบเขตของพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคลมาตั้งแต่เริ่มต้น ",
+      //
+      solutionListTitle:
+        '"ด้วยเวลาการพัฒนากว่า 2 ปี เราจึงพร้อมที่จะนำระบบการเซ็นเอกสารดิจิทัลด้วย iSignSecure ที่มีการออกแบบอย่างครบวงจร  3 อย่าง ได้แก่"',
+      SolutionListContent: [
+        {
+          id: "1",
+          photoUrl:
+            "https://static.wixstatic.com/media/74c934_33fde459d8124af58ed74ed585244dc4~mv2.jpg/v1/crop/x_0,y_253,w_5524,h_3024/fill/w_319,h_172,al_c,q_80,usm_0.66_1.00_0.01/209.webp",
+          detail:
+            "1. การสร้างแอปพลิเคชันบนมือถือสำหรับการยืนยันตัวตน KYC 2 ชั้น",
+        },
+        {
+          id: "2",
+          photoUrl:
+            "https://static.wixstatic.com/media/74c934_bf0dc71c61054444b28b4c091ea34908~mv2.jpg/v1/crop/x_15,y_45,w_4690,h_2672/fill/w_304,h_172,al_c,q_80,usm_0.66_1.00_0.01/4195.webp",
+          detail:
+            "2. การสร้างระบบการเซ็นเอกสารด้วยลายเซ็นดิจิทัล ที่ทำให้การเซ็นเอกสารเป็นเรื่องง่ายและทำได้จากทุกที่ ",
+        },
+        {
+          id: "3",
+          photoUrl:
+            "https://static.wixstatic.com/media/74c934_29755305430744efb16f8f9d5062e6d3~mv2.jpg/v1/crop/x_135,y_126,w_3065,h_1611/fill/w_336,h_172,al_c,q_80,usm_0.66_1.00_0.01/22720.webp",
+          detail:
+            "3. การออกแบบระบบฐานข้อมูลเพื่อเก็บไฟล์เอกสารดิจิทัลที่เซ็นแล้วอย่างเป็นระเบียบ ทำให้ค้นหาและใช้ในการอ้างอิงเชิงกฎหมายได้ ",
         },
       ],
       //
