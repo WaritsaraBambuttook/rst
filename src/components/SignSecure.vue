@@ -36,36 +36,13 @@
 
 <script>
 export default {
+  props: {
+    title: { type: String, required: true },
+    detail: { type: String, required: true },
+    content: { type: Array, required: true },
+  },
   data() {
-    return {
-      title: "จุดเด่นของระบบ iSignSecure",
-      detail: "ระบบการลงลายเซ็นเพื่อการยินยอมออนไลน์ สะดวก และตรวจสอบได้",
-      content: [
-        {
-          id: "1",
-          title: "การยืนยันตัวตน KYC",
-          detail:
-            "ระบบ KYC ที่มาพร้อมการยืนยันตัวตน 2 ขั้น จากแอปพลิเคชันและรหัส ที่เป็นได้ทั้งตัวเลข ลายนิ้วมือ และใบหน้า",
-          icon: "https://www.flaticon.com/svg/static/icons/svg/633/633869.svg",
-        },
-        {
-          id: "2",
-          title: "ลายเซ็นดิจิทัล",
-          detail:
-            "ระบบ KYC ที่มาพร้อมการยืนยันตัวตน 2 ขั้น จากแอปพลิเคชันและรหัส ที่เป็นได้ทั้งตัวเลข ลายนิ้วมือ และใบหน้า",
-          icon:
-            "https://www.flaticon.com/svg/static/icons/svg/3063/3063761.svg",
-        },
-        {
-          id: "3",
-          title: "ระบบจัดการฐานข้อมูล",
-          detail:
-            "สร้างตามมาตรฐานความปลอดภัยขั้นสูงระดับ AAL3 พร้อมระบบซิงค์เอกสารเพื่อเห็นเวอร์ชันล่าสุดเสมอ",
-          icon:
-            "https://www.flaticon.com/svg/static/icons/svg/3064/3064155.svg",
-        },
-      ],
-    };
+    return {};
   },
 };
 </script>

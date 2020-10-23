@@ -1,15 +1,13 @@
 <template>
   <div>
     <div class="q-col-gutter-md row items-start full-height ">
-      <q-img
-        src="https://static.wixstatic.com/media/74c934_5587dd7db899414d9e432a7d49199c78~mv2.jpg/v1/fill/w_1439,h_603,al_c,q_85,usm_0.66_1.00_0.01/74c934_5587dd7db899414d9e432a7d49199c78~mv2.webp"
-      >
+      <q-img :src="bannerImg">
         <div class="row absolute-full flex flex-center text-center">
           <div class="col-12 text-body2  text">
-            {{ detail }}
+            {{ bannerDetail }}
 
             <div class="q-pt-xl">
-              <q-btn class="btn" label="ขอคำปรึกษาจากทีมงาน" />
+              <q-btn class="btn" :label="bannerButton" />
             </div>
           </div>
         </div>
@@ -19,10 +17,13 @@
 </template>
 <script>
 export default {
+  props: {
+    bannerImg: { type: String, required: true },
+    bannerDetail: { type: String, required: true },
+    bannerButton: { type: String, required: true },
+  },
   data() {
-    return {
-      detail: "สร้างระบบ KYC สำหรับองค์กรของคุณ",
-    };
+    return {};
   },
 };
 </script>
