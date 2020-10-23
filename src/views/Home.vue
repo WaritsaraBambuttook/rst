@@ -1,19 +1,44 @@
 <template>
-  <div class="Home">
-    <div class="q-col-gutter-md row items-start full-height">
-      <q-img
-        src="https://static.wixstatic.com/media/74c934_5587dd7db899414d9e432a7d49199c78~mv2.jpg/v1/fill/w_1439,h_603,al_c,q_85,usm_0.66_1.00_0.01/74c934_5587dd7db899414d9e432a7d49199c78~mv2.webp"
-      >
-        <div class="absolute-full text-subtitle2 flex flex-center">
-          Caption
-        </div>
-      </q-img>
+  <div class="row Home">
+    <div class="col-12">
+      <HomeBanner />
+    </div>
+    <div>
+      <div class="col-12 q-mt-xl setPosition">
+        <company />
+      </div>
+      <div class="col-12 q-mt-xl">
+        <SignSecure />
+      </div>
+      <div class="col-12 q-mt-xl setPosition">
+        <SignSecureDetail />
+      </div>
+      <div class="col-12 q-mt-xl">
+        <Photo />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-export default {};
+import HomeBanner from "../components/HomeBanner";
+import company from "../components/CompanyReady";
+import SignSecure from "../components/SignSecure";
+import SignSecureDetail from "../components/SignSecureDetail";
+import Photo from "../components/Photo";
+export default {
+  components: {
+    HomeBanner,
+    company,
+    SignSecure,
+    SignSecureDetail,
+    Photo,
+  },
+};
 </script>
+<style scoped>
+.setPosition {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+</style>

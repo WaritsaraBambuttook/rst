@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="app">
     <div>
       <q-toolbar class="text-white shadow-2 toolbar">
         <q-img
-          class="logo q-mt-sm q-mb-sm"
+          class="logo "
           src="https://static.wixstatic.com/media/74c934_d8b1b749bd8e452288b7a311691e3f8f~mv2.png/v1/crop/x_0,y_16,w_429,h_507/fill/w_53,h_60,al_c,q_85,usm_0.66_1.00_0.01/logo%20mobile%20key-02.webp"
           style="height: 60px; max-width: 53px"
         />
@@ -14,7 +14,7 @@
         notice shrink property since we are placing it
         as child of QToolbar
       -->
-        <q-tabs v-model="tab" shrink stretch class="tabbar">
+        <q-tabs shrink stretch class="tabbar">
           <q-tab name="tab1" label="หน้าแรก" />
           <q-tab name="tab2" label="ระบบ e-KYC" />
           <q-tab name="tab3" label="ระบบ e-Signature" />
@@ -23,18 +23,9 @@
         </q-tabs>
       </q-toolbar>
     </div>
-    <div>
-      <q-parallax class="window-height window-width" :speed="0.5">
-        <template v-slot:media>
-          <img
-            src="https://cdn.pixabay.com/photo/2014/09/23/15/03/background-457811_640.png"
-          />
-        </template>
 
-        <div class="full-height full-width">
-          <Home />
-        </div>
-      </q-parallax>
+    <div class="q-mt-md ">
+      <Home />
     </div>
   </div>
 </template>
@@ -43,11 +34,9 @@
 import Home from "./views/Home";
 export default {
   name: "LayoutDefault",
-
   components: {
     Home,
   },
-
   data() {
     return {
       leftDrawerOpen: false,
@@ -56,15 +45,29 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style scoped>
+.app {
+  /* The image used */
+  background-image: url("https://img.freepik.com/free-vector/abstract-paper-hexagon-white-background_51543-7.jpg?size=626&ext=jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .logo {
-  margin-left: 25%;
+  margin-left: 20%;
   /* margin-right: 5%; */
 }
 .tabbar {
-  margin-right: 25%;
+  margin-right: 20%;
 }
 .toolbar {
   background-color: #1d2951;
+  height: 100px;
 }
 </style>
