@@ -33,7 +33,12 @@
         <Photo :logo="photo" />
       </div>
       <div class="col-12 q-ma-xl setPosition">
-        <Solution :title="solutionTitle" :detail="solutionDetail" />
+        <Solution
+          :title="solutionTitle"
+          :detail="solutionDetail"
+          :fontSizeTitle="solutionFontTitle"
+          :fontSizeDetail="solutionFontDetail"
+        />
       </div>
       <div class="col-12 ">
         <SolutionList
@@ -46,13 +51,13 @@
 </template>
 
 <script>
-import HomeBanner from "../components/HomeBanner";
-import company from "../components/CompanyReady";
-import SignSecure from "../components/SignSecure";
-import SignSecureDetail from "../components/SignSecureDetail";
-import Photo from "../components/Photo";
-import Solution from "../components/Solution";
-import SolutionList from "../components/SolutionList";
+import HomeBanner from "../components/home/HomeBanner";
+import company from "../components/home/CompanyReady";
+import SignSecure from "../components/home/SignSecure";
+import SignSecureDetail from "../components/home/SignSecureDetail";
+import Photo from "../components/home/Photo";
+import Solution from "../components/home/Solution";
+import SolutionList from "../components/home/SolutionList";
 
 export default {
   components: {
@@ -149,6 +154,8 @@ export default {
       solutionTitle: "RST เราเป็นหนึ่งเรื่องโซลูชันสำหรับองค์กร",
       solutionDetail:
         "ในนามของบริษัท เรียลไทม์ แอนด์ ซีเคียว เทคโนโลยี จำกัด เราพร้อมที่จะสร้างสรรค์นวัตกรรมใหม่ที่สามารถสอดผสานเข้ากับระบบสินค้าและบริการออนไลน์ของคุณได้ทันทีและสำหรับผลิตภัณฑ์อย่าง iSignSecure เราได้ทำการศึกษาแนวทางปฏิบัติ เงื่อนไขและขอบเขตของพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคลมาตั้งแต่เริ่มต้น ",
+      solutionFontTitle: "60px",
+      solutionFontDetail: "25px",
       //
       solutionListTitle:
         '"ด้วยเวลาการพัฒนากว่า 2 ปี เราจึงพร้อมที่จะนำระบบการเซ็นเอกสารดิจิทัลด้วย iSignSecure ที่มีการออกแบบอย่างครบวงจร  3 อย่าง ได้แก่"',

@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="col-6 q-pa-md ">
-      <q-card class="full-height">
+      <q-card class="full-height card-background">
         <q-card-section>
           <div class="row ">
             <div class="col-12 text-h4 text-center">
@@ -49,9 +49,9 @@
 export default {
   name: "CompanyReady",
   props: {
-    title: { type: String, required: true },
-    detail1: { type: String, required: true },
-    detail2: { type: String, required: true },
+    title: { type: String },
+    detail1: { type: String },
+    detail2: { type: String },
   },
   data() {
     return {};
@@ -85,5 +85,9 @@ export default {
 .img5 {
   width: 179px;
   height: 210px;
+}
+.card-background {
+  background-color: rgba(0, 0, 0, 0.582);
+  color: white;
 }
 </style>

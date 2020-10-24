@@ -18,9 +18,9 @@
 <script>
 export default {
   props: {
-    bannerImg: { type: String, required: true },
-    bannerDetail: { type: String, required: true },
-    bannerButton: { type: String, required: true },
+    bannerImg: { type: String },
+    bannerDetail: { type: String },
+    bannerButton: { type: String },
   },
   data() {
     return {};

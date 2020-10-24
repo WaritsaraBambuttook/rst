@@ -37,9 +37,9 @@
 <script>
 export default {
   props: {
-    title: { type: String, required: true },
-    detail: { type: String, required: true },
-    content: { type: Array, required: true },
+    title: { type: String },
+    detail: { type: String },
+    content: { type: Array },
   },
   data() {
     return {};
@@ -64,5 +64,8 @@ export default {
 .iconImg {
   height: 50px;
   max-width: 50px;
+}
+.setCard {
+  height: 100%;
 }
 </style>

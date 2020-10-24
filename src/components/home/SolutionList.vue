@@ -1,5 +1,5 @@
 <template>
-  <div class="solutionList ">
+  <div class="solutionList">
     <div class="row setPosition text-center q-pa-xl">
       <div class="q-pa-xl title ">
         {{ title }}
@@ -11,7 +11,7 @@
           :key="content.id"
         >
           <q-card class="my-card card">
-            <img :src="content.photoUrl" />
+            <img class="img" :src="content.photoUrl" />
             <q-card-section class="q-pt-none q-pa-sm">
               {{ content.detail }}
             </q-card-section>
@@ -24,8 +24,8 @@
 <script>
 export default {
   props: {
-    title: { type: String, required: true },
-    content: { type: Array, required: true },
+    title: { type: String },
+    content: { type: Array },
   },
 };
 </script>
@@ -46,5 +46,8 @@ export default {
 }
 .card {
   height: 100%;
+}
+.img {
+  height: 210px;
 }
 </style>

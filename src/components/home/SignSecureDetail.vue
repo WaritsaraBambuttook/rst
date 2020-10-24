@@ -21,9 +21,9 @@
 <script>
 export default {
   props: {
-    logo: { type: String, required: true },
-    detail: { type: String, required: true },
-    content: { type: Array, required: true },
+    logo: { type: String },
+    detail: { type: String },
+    content: { type: Array },
   },
 };
 </script>

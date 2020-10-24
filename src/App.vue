@@ -1,54 +1,78 @@
 <template>
   <div class="app">
     <q-layout>
-      <div>
-        <q-header>
-          <q-toolbar class="text-white shadow-2 toolbar">
-            <q-img
-              class="logo "
-              src="https://static.wixstatic.com/media/74c934_d8b1b749bd8e452288b7a311691e3f8f~mv2.png/v1/crop/x_0,y_16,w_429,h_507/fill/w_53,h_60,al_c,q_85,usm_0.66_1.00_0.01/logo%20mobile%20key-02.webp"
-              style="height: 60px; max-width: 53px"
-            />
-            <q-space />
-            <q-tabs shrink stretch class="tabbar">
-              <q-route-tab name="tab1" :to="{ name: 'Home' }" label="หน้าแรก" />
-              <q-route-tab
-                name="tab2"
-                :to="{ name: 'Kyc' }"
-                label="ระบบ e-KYC"
-              />
-              <q-route-tab
-                name="tab3"
-                :to="{ name: 'ESignature' }"
-                label="ระบบ e-Signature"
-              />
-              <q-route-tab
-                name="tab4"
-                :to="{ name: 'ISignSecure' }"
-                label="เทคโนโลยีของ ISignSecure"
-              />
-              <q-route-tab
-                name="tab5"
-                :to="{ name: 'Contact' }"
-                label="ติดต่อเรา"
-              />
-            </q-tabs>
-          </q-toolbar>
-        </q-header>
-      </div>
-
-      <div>
-        <div class="pageView">
-          <q-page-container>
-            <q-page>
-              <router-view />
-            </q-page>
-          </q-page-container>
+      <div class="row">
+        <div class="col-12">
+          <q-header class="toolbar">
+            <div class="row q-pt-md setPosition">
+              <div v-if="window.width > 1024" class="col-2 img">
+                <q-img
+                  class="logo"
+                  src="https://static.wixstatic.com/media/74c934_d8b1b749bd8e452288b7a311691e3f8f~mv2.png/v1/crop/x_0,y_16,w_429,h_507/fill/w_53,h_60,al_c,q_85,usm_0.66_1.00_0.01/logo%20mobile%20key-02.webp"
+                />
+              </div>
+              <div v-if="window.width > 601" class="col-10 text-white tab ">
+                <q-tabs
+                  inline-label
+                  outside-arrows
+                  mobile-arrows
+                  class="text-white "
+                >
+                  <q-route-tab
+                    name="tab1"
+                    :to="{ name: 'Home' }"
+                    label="หน้าแรก"
+                  />
+                  <q-route-tab
+                    name="tab2"
+                    :to="{ name: 'Kyc' }"
+                    label="ระบบ e-KYC"
+                  />
+                  <q-route-tab
+                    name="tab3"
+                    :to="{ name: 'ESignature' }"
+                    label="ระบบ e-Signature"
+                  />
+                  <q-route-tab
+                    name="tab4"
+                    :to="{ name: 'ISignSecure' }"
+                    label="เทคโนโลยีของ ISignSecure"
+                  />
+                  <q-route-tab
+                    name="tab5"
+                    :to="{ name: 'Contact' }"
+                    label="ติดต่อเรา"
+                  />
+                </q-tabs>
+              </div>
+              <div
+                v-if="window.width < 600"
+                class="col-12 setPosition text-center"
+              >
+                <q-btn-dropdown :label="menu">
+                  <q-list v-for="list in list" :key="list" class="list">
+                    <q-item-label header @click="changeMenu(list)">{{
+                      list
+                    }}</q-item-label>
+                  </q-list>
+                </q-btn-dropdown>
+              </div>
+            </div>
+          </q-header>
         </div>
-        <div class="col-12 ">
-          <q-footer elevated>
-            <Footer />
-          </q-footer>
+        <div class="col-12">
+          <div class="pageView">
+            <q-page-container>
+              <q-page>
+                <router-view />
+              </q-page>
+            </q-page-container>
+          </div>
+          <div class="col-12 ">
+            <q-footer elevated>
+              <Footer />
+            </q-footer>
+          </div>
         </div>
       </div>
     </q-layout>
@@ -66,7 +90,35 @@ export default {
   data() {
     return {
       leftDrawerOpen: false,
+      window: {
+        width: 0,
+        height: 0,
+      },
+      menu: "หน้าแรก",
+      list: [
+        "หน้าแรก",
+        "ระบบ e-KYC",
+        "ระบบ e-Signature",
+        "เทคโนโลยีของ ISignSecure",
+        "ติดต่อเรา",
+      ],
     };
+  },
+  created() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.window.width = window.innerWidth;
+      this.window.height = window.innerHeight;
+    },
+    changeMenu(text) {
+      this.menu = text;
+    },
   },
 };
 </script>
@@ -88,16 +140,33 @@ export default {
 .logo {
   margin-left: 20%;
   /* margin-right: 5%; */
+  width: 30px;
+  height: 35px;
 }
 .tabbar {
   margin-right: 20%;
 }
 .toolbar {
   background-color: #1d2951;
-  height: 100px;
 }
 .pageView {
   height: 100%;
   padding-bottom: auto;
+}
+.setPosition {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.list {
+  width: -webkit-fill-available;
+}
+@media only screen and (max-width: 1023px) {
+  .tab {
+    width: 100%;
+  }
+  .setPosition {
+    justify-content: center;
+    width: auto;
+  }
 }
 </style>
