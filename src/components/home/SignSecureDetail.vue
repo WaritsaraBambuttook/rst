@@ -6,12 +6,16 @@
     <div class="col-12 q-mt-xl datail">
       {{ detail }}
     </div>
-    <div class="row q-ma-xl">
-      <div class="col-6 " v-for="content in content" :key="content.id">
-        <div class="q-ma-md text-h5 content_title ">
+    <div class="row q-pa-xl">
+      <div
+        class="col-12 col-sm-6 q-pa-md"
+        v-for="content in content"
+        :key="content.id"
+      >
+        <div class=" text-h5 content_title ">
           {{ content.title }}
         </div>
-        <div class="q-ma-xl text-h6 content_detail ">
+        <div class=" text-h6 content_detail ">
           {{ content.detail }}
         </div>
       </div>
@@ -21,9 +25,9 @@
 <script>
 export default {
   props: {
-    logo: { type: String },
-    detail: { type: String },
-    content: { type: Array },
+    logo: { type: String, required: true },
+    detail: { type: String, required: true },
+    content: { type: Array, required: true },
   },
 };
 </script>

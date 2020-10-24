@@ -1,17 +1,17 @@
 <template>
   <div class="Footer">
     <div class="row  setPosition">
-      <div class="col-3 text-center">
+      <div class="col-4 col-sm-3 text-center">
         <q-img
           class="logo "
           src="https://static.wixstatic.com/media/74c934_d8b1b749bd8e452288b7a311691e3f8f~mv2.png/v1/crop/x_0,y_16,w_429,h_507/fill/w_53,h_60,al_c,q_85,usm_0.66_1.00_0.01/logo%20mobile%20key-02.webp"
           style="height: 60px; max-width: 53px"
         />
       </div>
-      <div class="col-4 text">
+      <div class="col-8 col-sm-4 text">
         {{ detail }}
       </div>
-      <div class="col-5 q-pl-xl text">
+      <div class="col-12 col-sm-5 q-pl-xl detail text">
         <div class="col ">
           <div class="row">
             <div class="col-2">
@@ -85,5 +85,20 @@ export default {
 }
 .img {
   margin-right: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .setPosition {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .detail {
+    padding-top: 10%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1319px) {
+  .setPosition {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 </style>

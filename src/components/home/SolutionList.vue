@@ -1,21 +1,23 @@
 <template>
   <div class="solutionList">
     <div class="row setPosition text-center q-pa-xl">
-      <div class="q-pa-xl title ">
+      <div class="col-12 q-pa-xl title ">
         {{ title }}
       </div>
-      <div class="row">
-        <div
-          class="col-4 detail q-pa-sm"
-          v-for="content in content"
-          :key="content.id"
-        >
-          <q-card class="my-card card">
-            <img class="img" :src="content.photoUrl" />
-            <q-card-section class="q-pt-none q-pa-sm">
-              {{ content.detail }}
-            </q-card-section>
-          </q-card>
+      <div class="col-12">
+        <div class="row">
+          <div
+            class="col-12 col-sm-4 detail q-pa-sm"
+            v-for="content in content"
+            :key="content.id"
+          >
+            <q-card class="my-card card">
+              <img class="img" :src="content.photoUrl" />
+              <q-card-section class="q-pt-none q-pa-sm">
+                {{ content.detail }}
+              </q-card-section>
+            </q-card>
+          </div>
         </div>
       </div>
     </div>
@@ -49,5 +51,34 @@ export default {
 }
 .img {
   height: 210px;
+}
+@media only screen and (max-width: 600px) {
+  .setPosition {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .detail {
+    text-align: center;
+    font-size: 14px;
+  }
+  .img {
+    height: 150px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1319px) {
+  .setPosition {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .detail {
+    text-align: center;
+    font-size: 16px;
+  }
 }
 </style>

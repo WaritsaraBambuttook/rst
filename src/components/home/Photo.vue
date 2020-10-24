@@ -1,7 +1,7 @@
 <template>
   <div class="row q-mt-xl text-center">
     <div
-      class="col-4 "
+      class="col-12 col-sm-4"
       v-for="logo in logo"
       :key="logo.id"
       :style="{ 'background-color': logo.color }"
@@ -21,7 +21,7 @@ export default {
 </script>
 <style scoped>
 .logo {
-  width: 270px;
+  width: 250px;
   height: 504px;
 }
 </style>

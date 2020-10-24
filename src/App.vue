@@ -50,9 +50,9 @@
                 class="col-12 setPosition text-center"
               >
                 <q-btn-dropdown :label="menu">
-                  <q-list v-for="list in list" :key="list" class="list">
+                  <q-list v-for="list in list" :key="list.id" class="list">
                     <q-item-label header @click="changeMenu(list)">{{
-                      list
+                      list.name
                     }}</q-item-label>
                   </q-list>
                 </q-btn-dropdown>
@@ -96,11 +96,11 @@ export default {
       },
       menu: "หน้าแรก",
       list: [
-        "หน้าแรก",
-        "ระบบ e-KYC",
-        "ระบบ e-Signature",
-        "เทคโนโลยีของ ISignSecure",
-        "ติดต่อเรา",
+        { name: "หน้าแรก", path: "Home" },
+        { name: "ระบบ e-KYC", path: "Kyc" },
+        { name: "ระบบ e-Signature", path: "ESignature" },
+        { name: "เทคโนโลยีของ ISignSecure", path: "ISignSecure" },
+        { name: "ติดต่อเรา", path: "Contact" },
       ],
     };
   },
@@ -117,7 +117,8 @@ export default {
       this.window.height = window.innerHeight;
     },
     changeMenu(text) {
-      this.menu = text;
+      this.menu = text.name;
+      this.$router.push({ name: text.path });
     },
   },
 };

@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div class="q-col-gutter-md row items-start full-height ">
+    <div class=" row items-start full-height ">
       <q-img :src="bannerImg">
-        <div class="row absolute-full flex flex-center text-center">
-          <div class="col-12 text-body2  text">
-            {{ bannerDetail }}
+        <div class="row absolute-full  flex-center text-center">
+          <div class="col text-body2  text">
+            <div>
+              {{ bannerDetail }}
+            </div>
 
-            <div class="q-pt-xl">
+            <div class="button">
               <q-btn class="btn" :label="bannerButton" />
             </div>
           </div>
@@ -35,5 +37,31 @@ export default {
 .btn {
   font-size: 20px;
   background-color: #69b0dc;
+}
+.button {
+  padding-top: 8%;
+}
+@media only screen and (max-width: 600px) {
+  .text {
+    font-size: 14px;
+    padding-top: 5%;
+  }
+  .btn {
+    font-size: 12px;
+    background-color: #69b0dc;
+  }
+  .button {
+    padding-top: 5px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1319px) {
+  .text {
+    font-size: 25px;
+    padding-top: 8%;
+  }
+  .btn {
+    font-size: 20px;
+    background-color: #69b0dc;
+  }
 }
 </style>

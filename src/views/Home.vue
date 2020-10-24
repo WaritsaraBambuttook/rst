@@ -1,50 +1,47 @@
 <template>
-  <div class="row Home">
-    <div class="col-12">
-      <HomeBanner
-        :bannerImg="bannerImg"
-        :bannerDetail="bannerDetail"
-        :bannerButton="bannerButton"
-      />
-    </div>
-    <div>
-      <div class="col-12 q-mt-xl setPosition">
-        <company
-          :title="companyTitle"
-          :detail1="companyDetaill"
-          :detail2="companyDetail2"
+  <div>
+    <div class="row">
+      <div class="col-12">
+        <HomeBanner
+          :bannerImg="bannerImg"
+          :bannerDetail="bannerDetail"
+          :bannerButton="bannerButton"
         />
       </div>
-      <div class="col-12 q-mt-xl">
-        <SignSecure
-          :title="signSecureTitle"
-          :detail="signSecureDetail"
-          :content="signSecureContent"
-        />
-      </div>
-      <div class="col-12 q-mt-xl setPosition">
-        <SignSecureDetail
-          :logo="signSecureDatilLogo"
-          :detail="signSecureDatilDetail"
-          :content="signSecureDatilContent"
-        />
-      </div>
-      <div class="col-12 q-mt-xl">
-        <Photo :logo="photo" />
-      </div>
-      <div class="col-12 q-ma-xl setPosition">
-        <Solution
-          :title="solutionTitle"
-          :detail="solutionDetail"
-          :fontSizeTitle="solutionFontTitle"
-          :fontSizeDetail="solutionFontDetail"
-        />
-      </div>
-      <div class="col-12 ">
-        <SolutionList
-          :title="solutionListTitle"
-          :content="SolutionListContent"
-        />
+      <div class="col-12">
+        <div class="col-12 q-mt-xl setPosition">
+          <company
+            :title="companyTitle"
+            :detail1="companyDetaill"
+            :detail2="companyDetail2"
+          />
+        </div>
+        <div class="col-12 q-mt-xl">
+          <SignSecure
+            :title="signSecureTitle"
+            :detail="signSecureDetail"
+            :content="signSecureContent"
+          />
+        </div>
+        <div class="col-12 q-mt-xl setPosition">
+          <SignSecureDetail
+            :logo="signSecureDatilLogo"
+            :detail="signSecureDatilDetail"
+            :content="signSecureDatilContent"
+          />
+        </div>
+        <div class="col-12 q-mt-xl">
+          <Photo :logo="photo" />
+        </div>
+        <div class="col-12 q-ma-xl setPosition">
+          <Solution :title="solutionTitle" :detail="solutionDetail" />
+        </div>
+        <div class="col-12 ">
+          <SolutionList
+            :title="solutionListTitle"
+            :content="SolutionListContent"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -154,8 +151,7 @@ export default {
       solutionTitle: "RST เราเป็นหนึ่งเรื่องโซลูชันสำหรับองค์กร",
       solutionDetail:
         "ในนามของบริษัท เรียลไทม์ แอนด์ ซีเคียว เทคโนโลยี จำกัด เราพร้อมที่จะสร้างสรรค์นวัตกรรมใหม่ที่สามารถสอดผสานเข้ากับระบบสินค้าและบริการออนไลน์ของคุณได้ทันทีและสำหรับผลิตภัณฑ์อย่าง iSignSecure เราได้ทำการศึกษาแนวทางปฏิบัติ เงื่อนไขและขอบเขตของพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคลมาตั้งแต่เริ่มต้น ",
-      solutionFontTitle: "60px",
-      solutionFontDetail: "25px",
+
       //
       solutionListTitle:
         '"ด้วยเวลาการพัฒนากว่า 2 ปี เราจึงพร้อมที่จะนำระบบการเซ็นเอกสารดิจิทัลด้วย iSignSecure ที่มีการออกแบบอย่างครบวงจร  3 อย่าง ได้แก่"',
@@ -191,5 +187,17 @@ export default {
 .setPosition {
   margin-left: 20%;
   margin-right: 20%;
+}
+@media only screen and (max-width: 600px) {
+  .setPosition {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1319px) {
+  .setPosition {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 </style>

@@ -1,16 +1,16 @@
 <template>
   <div class="solotion text-center q-pa-xl ">
     <div class="row q-pt-md ">
-      <div class="col-12 q-mt-md " :style="{ 'font-size': fontSizeTitle }">
+      <div class="col-12 q-mt-md title">
         {{ title }}
       </div>
-      <div class="col-12 q-mt-xl " :style="{ 'font-size': fontSizeDetail }">
+      <div class="col-12 q-mt-xl detail">
         {{ detail }}
       </div>
-      <div class="col-12 q-mt-xl " :style="{ 'font-size': fontSizeDetail }">
+      <div class="col-12 q-mt-xl detail">
         {{ detail2 }}
       </div>
-      <div class="col-12 q-mt-xl " :style="{ 'font-size': fontSizeDetail }">
+      <div class="col-12 q-mt-xl detail">
         {{ detail3 }}
       </div>
     </div>
@@ -29,15 +29,31 @@ export default {
 };
 </script>
 <style scoped>
-/* .title {
+.title {
   font-size: 60px;
 }
 .detail {
   font-size: 25px;
-} */
+}
 .solotion {
   background: rgba(0, 0, 0, 0.582);
   color: white;
   width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 16px;
+  }
+  .detail {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1319px) {
+  .title {
+    font-size: 20px;
+  }
+  .detail {
+    font-size: 16px;
+  }
 }
 </style>

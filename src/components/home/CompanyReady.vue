@@ -1,6 +1,6 @@
 <template>
   <div class="row CompanyReady">
-    <div class="col-6">
+    <div class="col-12 col-sm-6">
       <div class="row">
         <div class="col-5 allImg ">
           <div class="q-ma-md">
@@ -13,7 +13,7 @@
             <q-img class="img3" src="https://placeimg.com/500/300/nature" />
           </div>
         </div>
-        <div class="col-7">
+        <div class="col-7 allImg2 ">
           <div class="q-ma-md">
             <q-img class="img4 " src="https://placeimg.com/500/300/nature" />
           </div>
@@ -23,17 +23,17 @@
         </div>
       </div>
     </div>
-    <div class="col-6 q-pa-md ">
+    <div class="col-12 col-sm-6 ">
       <q-card class="full-height card-background">
         <q-card-section>
           <div class="row ">
-            <div class="col-12 text-h4 text-center">
+            <div class="col-12 text-h4 text-center title">
               {{ title }}
             </div>
-            <div class="col-12 q-pa-md">
+            <div class="col-12 q-pa-md detail">
               {{ detail1 }}
             </div>
-            <div class="col-12 q-pa-md">
+            <div class="col-12 q-pa-md detail">
               {{ detail2 }}
             </div>
           </div>
@@ -89,5 +89,19 @@ export default {
 .card-background {
   background-color: rgba(0, 0, 0, 0.582);
   color: white;
+}
+@media only screen and (max-width: 600px) {
+  .allImg {
+    display: none;
+  }
+  .allImg2 {
+    display: none;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .detail {
+    font-size: 12px;
+  }
 }
 </style>
