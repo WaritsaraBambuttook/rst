@@ -30,10 +30,10 @@ export default {
 </script>
 <style scoped>
 .title {
-  font-size: 60px;
+  font-size: 30px;
 }
 .detail {
-  font-size: 25px;
+  font-size: 20px;
 }
 .solotion {
   background: rgba(0, 0, 0, 0.582);
@@ -50,10 +50,10 @@ export default {
 }
 @media only screen and (min-width: 768px) and (max-width: 1319px) {
   .title {
-    font-size: 20px;
+    font-size: 16px;
   }
   .detail {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>

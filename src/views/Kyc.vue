@@ -14,7 +14,7 @@
       </div>
       <div class="col-12 ">
         <templateSignSecure
-          class="templateSignSecure"
+          class="templateSignSecure "
           :title="signSecureTitle"
           :content="signSecureContent"
         />

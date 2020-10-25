@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12" id="1">
         <HomeBanner
           :bannerImg="bannerImg"
           :bannerDetail="bannerDetail"
@@ -9,34 +9,46 @@
         />
       </div>
       <div class="col-12">
-        <div class="col-12 q-mt-xl setPosition">
-          <company
-            :title="companyTitle"
-            :detail1="companyDetaill"
-            :detail2="companyDetail2"
-          />
+        <div class="col-12 q-mt-xl q-mb-xl setPosition" id="2">
+          <sequential-entrance
+            fromTop
+            v-if="activeBlock >= 2 || showBox2 == 'showBox2'"
+          >
+            <company
+              :title="companyTitle"
+              :detail1="companyDetaill"
+              :detail2="companyDetail2"
+            />
+          </sequential-entrance>
         </div>
-        <div class="col-12 q-mt-xl">
-          <SignSecure
-            :title="signSecureTitle"
-            :detail="signSecureDetail"
-            :content="signSecureContent"
-          />
+        <div class="col-12 q-mt-xl" id="3">
+          <sequential-entrance fromRight>
+            <SignSecure
+              :title="signSecureTitle"
+              :detail="signSecureDetail"
+              :content="signSecureContent"
+            />
+          </sequential-entrance>
         </div>
-        <div class="col-12 q-mt-xl setPosition">
+        <div class="col-12 q-mt-xl setPosition" id="4">
           <SignSecureDetail
             :logo="signSecureDatilLogo"
             :detail="signSecureDatilDetail"
             :content="signSecureDatilContent"
           />
         </div>
-        <div class="col-12 q-mt-xl">
+        <div class="col-12 q-mt-xl" id="5">
           <Photo :logo="photo" />
         </div>
-        <div class="col-12 q-ma-xl setPosition">
-          <Solution :title="solutionTitle" :detail="solutionDetail" />
+        <div class="col-12 q-ma-xl box6 setPosition" id="6">
+          <sequential-entrance
+            fromRight
+            v-if="activeBlock >= 6 || showBox6 == 'showBox6'"
+          >
+            <Solution :title="solutionTitle" :detail="solutionDetail" />
+          </sequential-entrance>
         </div>
-        <div class="col-12 ">
+        <div class="col-12 " id="7">
           <SolutionList
             :title="solutionListTitle"
             :content="SolutionListContent"
@@ -179,7 +191,49 @@ export default {
         },
       ],
       //
+      idBlocks: [1, 2, 3, 4, 5, 6, 7],
+      activeBlock: null,
+      showBox2: "",
+      showBox6: "",
     };
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    elementInViewport(el) {
+      var top = el.offsetTop;
+      var height = el.offsetHeight;
+
+      while (el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+      }
+
+      return (
+        top >= window.pageYOffset &&
+        top + height <= window.pageYOffset + window.innerHeight
+      );
+    },
+
+    handleScroll() {
+      this.idBlocks.find((number) => {
+        const el = document.getElementById(number);
+        if (this.elementInViewport(el)) {
+          this.activeBlock = number;
+          console.log("focus component :", (this.activeBlock = number));
+          if (number == 2) {
+            this.showBox2 = "showBox2";
+          }
+          if (number == 6) {
+            this.showBox6 = "showBox6";
+          }
+        }
+      });
+    },
   },
 };
 </script>
@@ -187,6 +241,12 @@ export default {
 .setPosition {
   margin-left: 20%;
   margin-right: 20%;
+}
+.box6 {
+  height: 450px;
+}
+.box2 {
+  height: 650px;
 }
 @media only screen and (max-width: 600px) {
   .setPosition {

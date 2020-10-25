@@ -1,11 +1,12 @@
 <template>
   <div>
     <div class="row">
-      <div class="col">
+      <div class="col-12">
         <q-img :src="bannerImg">
           <div class="row absolute-full flex flex-center text-center ">
             <div class="setPosition ">
               <templateSolution
+                class="templateSolution"
                 :title="title"
                 :detail="detail"
                 :detail2="detail2"
@@ -41,5 +42,21 @@ export default {
 .setPosition {
   margin-left: 20%;
   margin-right: 20%;
+}
+
+@media only screen and (max-width: 600px) {
+  .setPosition {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .templateSolution {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1441px) {
+  .setPosition {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 </style>
