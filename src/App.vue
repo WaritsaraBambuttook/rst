@@ -49,7 +49,7 @@
                 v-if="window.width < 600"
                 class="col-12 setPosition text-center"
               >
-                <q-btn-dropdown :label="menu">
+                <q-btn-dropdown :label="menu" dropdown-icon="change_history">
                   <q-list v-for="list in list" :key="list.id" class="list">
                     <q-item-label header @click="changeMenu(list)">{{
                       list.name
