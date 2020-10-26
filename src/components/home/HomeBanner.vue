@@ -9,7 +9,7 @@
             </div>
 
             <div class="button">
-              <q-btn class="btn" :label="bannerButton" />
+              <q-btn class="btn" @click="sendMail" :label="bannerButton" />
             </div>
           </div>
         </div>
@@ -26,6 +26,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    sendMail() {
+      window.open("mailto:junticha@thai-g.com?subject=สวัสดีค่ะ");
+    },
   },
 };
 </script>
